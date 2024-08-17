@@ -1,23 +1,51 @@
-<h2>{{ title }}</h2>
-<div row>
-  <div col-2>
+<h2>{{ txtContext.title }}</h2>
+<div class="row mb-5">
+  <div class="col-1"></div>
 
-    <p>帳號:</p>
-    <input type="text" [(ngModel)]="acc" [disabled]="accDis" />
-    <p>密碼:</p>
-    <input type="password" [(ngModel)]="pw" />
-  </div>
-  <div>
-    <button class="btn btn-primary" (click)="submitInfo($event)">
-      {{ submit }}
-    </button>
-    <button class="btn btn-primary" type="reset">清除</button>
-    <button class="btn btn-primary" (click)="switch()">{{ change }}</button>
+  <div class="col-2">
+    <div class="mb-5">
+      <p>{{ txtContext.accLabel }}</p>
+      <input type="text" [(ngModel)]="userData.acc" [disabled]="accDis" />
+      <p class="text-danger" *ngIf="errState.accError">{{ error.acc }}</p>
+      <p class="text-danger" *ngIf="errState.pwError">{{ error.pw }}</p>
+      <p>{{ txtContext.pwLabel }}</p>
+      <input type="password" [(ngModel)]="userData.pw" />
+      <p class="text-danger" *ngIf="errState.pwError">
+        {{ error.pw }}
+      </p>
+
+      <p class="text-danger" *ngIf="errState.pwExistsError">
+        {{ error.pwExists }}
+      </p>
+    </div>
+    <div class="mb-5">
+      <button class="btn btn-primary" (click)="submitInfo()">
+        {{ txtContext.submit }}
+      </button>
+      <button class="btn btn-primary" type="reset">清除</button>
+      <button class="btn btn-primary" (click)="switch()">{{ change }}</button>
+    </div>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{ txtContext.accLabel }}</th>
+            <th>{{ txtContext.pwLabel }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userArray">
+            <td>{{ item.acc }}</td>
+            <td>{{ item.pw }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
-<span>帳號:</span>
+<!-- <span>{{ accLabel }}</span>
 <span [hidden]="spanHidden">{{ acc }}</span>
 <br />
-<span>密碼:</span>
-<span [hidden]="spanHidden">{{ pw }}</span>
+<span>{{ pwLabel }}</span>
+<span [hidden]="spanHidden">{{ pw }}</span> -->
