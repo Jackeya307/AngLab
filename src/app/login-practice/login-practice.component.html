@@ -1,13 +1,19 @@
 <h2>{{ title }}</h2>
+<div row>
+  <div col-2>
 
-<p>帳號:</p>
-<input type="text" [(ngModel)]="acc" [disabled]="accDis" />
-<p>密碼:</p>
-<input type="password" [(ngModel)]="pw" />
-<div>
-  <button (click)="submitInfo($event)">{{ submit }}</button>
-  <button type="reset">清除</button>
-  <button (click)="switch()">{{ change }}</button>
+    <p>帳號:</p>
+    <input type="text" [(ngModel)]="acc" [disabled]="accDis" />
+    <p>密碼:</p>
+    <input type="password" [(ngModel)]="pw" />
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="submitInfo($event)">
+      {{ submit }}
+    </button>
+    <button class="btn btn-primary" type="reset">清除</button>
+    <button class="btn btn-primary" (click)="switch()">{{ change }}</button>
+  </div>
 </div>
 
 <span>帳號:</span>
