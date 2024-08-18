@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-share-input',
@@ -12,4 +18,15 @@ export class ShareInputComponent {
   btnToggle() {
     this.userData.emit({ acc: this.account, pw: this.password });
   }
+  constructor() {
+    console.log('constructor');
+  }
+
+  // 2. Hook / construct (input參數改成物件 觀察OnChanges變化)
+  @Input() inputUser = {
+    inputAccount: '',
+    inputPwd: '',
+  };
+
+
 }

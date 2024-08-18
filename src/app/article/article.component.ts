@@ -23,7 +23,7 @@ export class ArticleComponent {
   }
   popData: Article[] = [
     {
-      title:'4',
+      title:'',
       context:''
     },
   ];
