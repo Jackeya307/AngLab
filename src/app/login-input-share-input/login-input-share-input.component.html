@@ -1,0 +1,10 @@
+<div class="mb-5 輸入項">
+  <p>{{ txtContext.accLabel }}</p>
+  <input type="text" [(ngModel)]="userData.acc" [disabled]="accDis" />
+  <p class="text-danger" *ngIf="errState.accError">{{ error.acc }}</p>
+  <p>{{ txtContext.pwLabel }}</p>
+  <input type="password" [(ngModel)]="userData.pw" />
+  <p class="text-danger" *ngIf="errState.pwError">
+    {{ error.pw }}
+  </p>
+</div>

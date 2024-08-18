@@ -3,29 +3,40 @@
   <div class="col-1"></div>
 
   <div class="col-2">
-    <div class="mb-5">
+    <!-- 輸入項 -->
+    <app-login-input-share-input
+      [txtContext]="txtContext"
+      [userData]="userData"
+      [error]="error"
+    ></app-login-input-share-input>
+    <!-- <div class="mb-5 輸入項">
       <p>{{ txtContext.accLabel }}</p>
       <input type="text" [(ngModel)]="userData.acc" [disabled]="accDis" />
       <p class="text-danger" *ngIf="errState.accError">{{ error.acc }}</p>
-      <p class="text-danger" *ngIf="errState.pwError">{{ error.pw }}</p>
       <p>{{ txtContext.pwLabel }}</p>
       <input type="password" [(ngModel)]="userData.pw" />
       <p class="text-danger" *ngIf="errState.pwError">
         {{ error.pw }}
       </p>
-
-      <p class="text-danger" *ngIf="errState.pwExistsError">
-        {{ error.pwExists }}
-      </p>
-    </div>
-    <div class="mb-5">
+    </div> -->
+    <!-- 按鈕及錯誤原因 -->
+    <app-login-table-share-ouput></app-login-table-share-ouput>
+    <div class="mb-5 按鈕及錯誤原因">
       <button class="btn btn-primary" (click)="submitInfo()">
         {{ txtContext.submit }}
       </button>
       <button class="btn btn-primary" type="reset">清除</button>
       <button class="btn btn-primary" (click)="switch()">{{ change }}</button>
+      <p class="text-danger" *ngIf="errState.accExistsError">
+        {{ error.accExists }}
+      </p>
     </div>
-    <div>
+    <!-- 表單 -->
+    <app-login-table-share-input
+      [txtContext]="txtContext"
+      [userArray]="userArray"
+    ></app-login-table-share-input>
+    <!-- <div class="表單">
       <table class="table">
         <thead>
           <tr>
@@ -40,7 +51,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </div>
 

@@ -1,7 +1,14 @@
-<h1>{{title}}</h1>
-<p>{{role==='主管'?'主管功能':'一般功能'}}</p>
+<h1>{{ title }}</h1>
+<p>{{ role === "主管" ? "主管功能" : "一般功能" }}</p>
 
-<input [(ngModel)]="count" type="text"  [placeholder]="AccPH" >
+<!-- <div>
+  <input [(ngModel)]="account" type="text"  />
+  <input [(ngModel)]="password" type="password"  />
+</div> -->
 
-<button (click)="btnToggle()" >123</button>
-<p>{{count}}</p>
+<!-- <button (click)="btnToggle($event)">123</button> -->
+
+<input [(ngModel)]="account" type="text"  />
+<input [(ngModel)]="password" type="password"  />
+
+<app-share-input (userData)="btnToggle($event)" [password]="password" [account]="account"></app-share-input>

@@ -12,10 +12,11 @@ export class LoginComponent {
   btnFlag = false
 
   count = 0
-
-  btnToggle(){
+  account = ''
+  password  = ''
+  btnToggle(paras:any){
     // this.btnFlag = !this.btnFlag
-    this.count = 123
+    console.log('子類別',paras)
   }
 
 }

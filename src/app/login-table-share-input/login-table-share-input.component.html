@@ -1,0 +1,16 @@
+<div class="表單">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ txtContext.accLabel }}</th>
+        <th>{{ txtContext.pwLabel }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userArray">
+        <td>{{ item.acc }}</td>
+        <td>{{ item.pw }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
