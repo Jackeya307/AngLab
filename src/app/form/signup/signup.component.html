@@ -4,8 +4,9 @@
     <form [formGroup]="userForm">
       <p>帳號 :</p>
       <input formControlName="account" />
+      <p *ngIf="userForm.get('account')?.errors?.['required']"  class="text-danger">必須填寫</p>
       <p>密碼 :</p>
-      <input formControlName="password" />
+      <input formControlName="password" [readOnly]="userForm.get('password')?.invalid" maxlength="20"/>
 
       <div formGroupName="userInfo">
         <p>個人資訊 :</p>
@@ -25,8 +26,9 @@
       </div>
     </form>
     <div class="mt-3">
-      <button (click)="submit()" class="btn btn-primary">提交</button>
+      <button (click)="submit()"  class="btn btn-primary">提交</button>
       <button (click)="reset()" class="btn btn-primary">清除</button>
+      <p></p>
     </div>
   </div>
 
