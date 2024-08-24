@@ -36,3 +36,12 @@
     </tr>
   </table>
 </div>
+
+
+<p [ngStyle]="{'font-size': fontSize +'px'}">{{'article' | uppercase }}</p>
+<p [ngStyle]="{'font-size': fontSize +'px'}">{{ nowDate  }}</p>
+
+<p [ngStyle]="{'font-size': fontSize +'px'}">{{ nowDate| myDate }}</p>
+<!-- ts檔中 新增nowDate = new Date() -->
+<!-- <p [ngStyle]="{'font-size': fontSize +'px'}">{{ nowDate | date : 'shortDate' }}</p>
+<p [ngStyle]="{'font-size': fontSize +'px'}">{{ nowDate | date : 'fullDate' }}</p> -->

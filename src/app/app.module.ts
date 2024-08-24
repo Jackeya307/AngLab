@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  LoginPracticeComponent } from './login-practice/login-practice.component';
 import { ArticleComponent } from './article/article.component';
 import { ShareInputComponent } from './share-input/share-input.component';
@@ -12,6 +12,8 @@ import { LoginTableShareInputComponent } from './login-table-share-input/login-t
 import { LoginInputShareInputComponent } from './login-input-share-input/login-input-share-input.component';
 import { LoginTableShareOuputComponent } from './login-table-share-ouput/login-table-share-ouput.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MyDatePipe } from './pipes/my-date.pipe';
+import { SignupComponent } from './form/signup/signup.component';
 
 
 @NgModule({
@@ -23,13 +25,16 @@ import { HttpClientModule } from '@angular/common/http';
     ShareInputComponent,
     LoginTableShareInputComponent,
     LoginInputShareInputComponent,
-    LoginTableShareOuputComponent
+    LoginTableShareOuputComponent,
+    MyDatePipe,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

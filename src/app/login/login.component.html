@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<p>{{ role === "主管" ? "主管功能" : "一般功能" }}</p>
+<p (load)="load()">{{ role === "主管" ? "主管功能" : "一般功能" }}</p>
 
 <!-- <div>
   <input [(ngModel)]="account" type="text"  />
@@ -8,7 +8,10 @@
 
 <!-- <button (click)="btnToggle($event)">123</button> -->
 
-<input [(ngModel)]="account" type="text"  />
-<input [(ngModel)]="password" type="password"  />
-
-<app-share-input (userData)="btnToggle($event)" [password]="password" [account]="account"></app-share-input>
+<app-share-input
+  (userData)="btnToggle($event)"
+  [adc]="adc"
+  [password]="userInfo.password"
+  [account]="userInfo.account"
+></app-share-input>
+<button (click)="text()">test</button>

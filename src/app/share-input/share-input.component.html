@@ -1,5 +1,10 @@
 <div>
+  <input (input)="uppCase()" [(ngModel)]="account" type="text" />
+  <input [(ngModel)]="password" type="password" />
+</div>
+<div>
   <p>帳號: {{ account }}</p>
   <p>密碼: {{ password }}</p>
 </div>
-<button (click)="btnToggle()">確認</button>
+<!-- <button (click)="btnToggle()">確認</button> -->
+<p>{{ adc.age }}</p>

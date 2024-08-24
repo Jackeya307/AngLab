@@ -1,7 +1,7 @@
+import { MyDatePipe } from './../pipes/my-date.pipe';
 import { UserService } from '../user.service';
 import { Article } from './../interface/article';
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ArticleComponent {
   isPop = false;
+fontSize = 24;
+nowDate: Date = new Date();
 
   pop() {
     this.isPop = true;
@@ -16,15 +18,15 @@ export class ArticleComponent {
   nor() {
     this.isPop = false;
   }
-  constructor(private user:UserService){
-    user.getApi().subscribe(data=>{
-      this.popData = data
-    })
+  constructor(private user: UserService) {
+    // user.getApi().subscribe(data=>{
+    //   this.popData = data
+    // })
   }
   popData: Article[] = [
     {
-      title:'',
-      context:''
+      title: '',
+      context: '',
     },
   ];
 }
