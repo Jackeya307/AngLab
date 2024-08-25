@@ -5,6 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MyDatePipe implements PipeTransform {
   transform(value:Date): string {
-      return  `${value.toLocaleDateString()} ${value.toTimeString().substring(0,5)}`
+    value = new Date(value)
+    return `${value.toLocaleDateString()} ${value.toTimeString().substring(0,5)}`
+    return value.toUTCString()
   }
 }

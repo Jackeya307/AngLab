@@ -1,4 +1,4 @@
-export interface Articles {
+export interface ArticleView {
   articleId: 1;
   themeId: 1;
   authorId: 3;
@@ -10,6 +10,6 @@ export interface Articles {
   lock: false;
   articleImage: null;
   posts: [];
-  theme: null;
-  themeNavigation: null;
+  themeName: string;
+  memberName: string;
 }

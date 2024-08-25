@@ -10,12 +10,14 @@ import { ArticleComponent } from './article/article.component';
 import { ShareInputComponent } from './share-input/share-input.component';
 import { LoginTableShareInputComponent } from './login-table-share-input/login-table-share-input.component';
 import { LoginInputShareInputComponent } from './login-input-share-input/login-input-share-input.component';
-import { LoginTableShareOuputComponent } from './login-table-share-ouput/login-table-share-ouput.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MyDatePipe } from './pipes/my-date.pipe';
 import { SignupComponent } from './form/signup/signup.component';
-
-
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
+import { EditorModule } from 'primeng/editor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,6 @@ import { SignupComponent } from './form/signup/signup.component';
     ShareInputComponent,
     LoginTableShareInputComponent,
     LoginInputShareInputComponent,
-    LoginTableShareOuputComponent,
     MyDatePipe,
     SignupComponent
   ],
@@ -34,7 +35,11 @@ import { SignupComponent } from './form/signup/signup.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    TableModule,
+    EditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

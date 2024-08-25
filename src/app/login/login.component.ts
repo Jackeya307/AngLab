@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  text() {
+  textTest = new FormGroup({
+    text: new FormControl('')})
+
+
+  asdf() {
     this.userInfo.account = '111';
     this.adc.age = 4545;
   }
@@ -22,6 +28,11 @@ export class LoginComponent {
     account: '',
     password: '',
   };
+
+  constructor(private route: ActivatedRoute) {
+    console.log(route.snapshot.paramMap.get('id'));
+    console.log(route.snapshot.queryParamMap.get('acc'));
+  }
   btnToggle(paras: any) {
     // this.btnFlag = !this.btnFlag
     console.log('子類別', paras);

@@ -1,6 +1,18 @@
-<div class="myColor">
-  <!-- <app-login></app-login> -->
-  <!-- <app-login-practice></app-login-practice> -->
-  <!-- <app-article></app-article> -->
-  <app-signup></app-signup>
-</div>
+<!-- <app-login></app-login> -->
+<!-- <app-login-practice></app-login-practice> -->
+<!-- <app-article></app-article> -->
+<!-- <app-signup></app-signup> -->
+<a routerLink="login/111">登入</a>
+<a routerLink="signup">註冊</a>
+<button class="btn btn-primary" (click)="getLogin(id)">登入</button>
+<button class="btn btn-primary" (click)="getSignup()">註冊</button><br />
+
+<p-button label="Primary" [rounded]="true"></p-button>
+<p-button label="Secondary" [rounded]="true" severity="secondary"></p-button>
+<p-button label="Success" [rounded]="true" severity="success"></p-button>
+<p-button label="Info" [rounded]="true" severity="info"></p-button>
+<p-button label="Warning" [rounded]="true" severity="warning"></p-button>
+<p-button label="Help" [rounded]="true" severity="help"></p-button>
+<p-button label="Danger" [rounded]="true" severity="danger"></p-button>
+
+<router-outlet></router-outlet>
